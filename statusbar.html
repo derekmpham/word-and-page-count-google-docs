@@ -1,0 +1,38 @@
+<html>
+<body>
+	<style type="text/css">
+		div#statusBar {
+			width: 100%;
+			height: 18px;
+			background-color: #ebebeb;
+			border-top: 1px solid silver;
+			color: black;
+			position: fixed;
+			bottom: 0;
+			z-index: 25000;
+			text-align: right;
+		}
+		span.statusBarCounter {
+			padding: 0 10px 0 10px;
+			line-height: 18px;
+			font-family: verdana;
+			font-size: 10pt;
+		}
+		span.statusBarCounter a {
+			text-decoration: none;
+			color: black;
+		}
+		span.statusBarSeparator {
+			border-left: 1px solid silver;
+			border-right: 1px solid silver;
+			margin: 0 1px;
+			display: inline-block;
+			width: 1px;
+			height: 10px;
+		}
+	</style>
+	<div id='statusBar'>
+		<span class='statusBarCounter' id='wordsTotal'>Warming up...</span>
+	</div>
+</body>
+</html>
