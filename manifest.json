@@ -11,7 +11,7 @@
 	"content_scripts": [
 	{
 		"matches": ["https://docs.google.com/document/*"],
-		"js": ["jq.js", "main.js"],
+		"js": ["jquery-3.1.1.min.js", "main.js"],
 		"run_at": "document_idle"
 	}
 	],
