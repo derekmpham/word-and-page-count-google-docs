@@ -2,6 +2,7 @@
 	"name": "Word Count for Google Docs",
 	"version": "1.0",
 	"manifest_version": 2,
+	"web_accessible_resources": ["statusbar.html"],
 
 	"description": "Status bar display for Google Docs.",
 	"background" : { "scripts": ["background.js"] },
@@ -14,7 +15,7 @@
 	"content_scripts": [
 	{
 		"matches": ["https://docs.google.com/document/*"],
-		"js": ["jquery-3.1.1.min.js", "main.js"],
+		"js": ["main.js"],
 		"run_at": "document_idle"
 	}
 	],
