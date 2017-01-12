@@ -11,14 +11,15 @@ xhReq.onreadystatechange = function onSumResponse() {
 xhReq.open("GET", chrome.extension.getURL("statusbar.html"), true);
 xhReq.send(null);
 
-chrome.extension.sendRequest({}, function(response) {});
-
-var readyStateCheckInterval = setInterval(function() {
-	if (document.readyState === "complete") {
-		countWords();
-		clearInterval(readyStateCheckInterval);
-	}
-}, 10);
+var options;
+chrome.extension.sendRequest({}, function(response) {options = response;
+	var readyStateCheckInterval = setInterval(function() {
+		if (document.readyState === "complete") {
+			countWords();
+			clearInterval(readyStateCheckInterval);
+			}
+		}, 10);
+	});
 
 function countWords() {
 	var pageCount = 0;

@@ -5,7 +5,7 @@
 	"web_accessible_resources": ["statusbar.html"],
 
 	"description": "Status bar display for Google Docs.",
-	"background" : { "scripts": ["background.js"] },
+	"background" : { "page": ["background.html"] },
 		
 	"page_action" :
 	{
@@ -22,5 +22,7 @@
 	"icons": {
 		"48": "48.png",
 		"128": "128.png"
-	}
+	},
+
+	"options_page": "fancy-settings/source/index.html"
 }

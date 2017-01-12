@@ -1,6 +1,13 @@
+var settings = new Store("settings", {
+	"themepicker": 'light',
+	"pagecounter": true,
+	"wordcounter": true,
+	"wclink": true
+});
+
 chrome.extension.onRequest.addListener(
 	function(request, sender, sendResponse) {
 		chrome.pageAction.show(sender.tab.id);
-		sendResponse({});
+		sendResponse(settings.toObject());
 	}
 );
