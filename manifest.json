@@ -5,7 +5,7 @@
 	"web_accessible_resources": ["statusbar.html"],
 
 	"description": "Status bar display for Google Docs.",
-	"background" : { "page": ["background.html"] },
+	"background_page" : { "page": ["background.html"] },
 		
 	"page_action" :
 	{
