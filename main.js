@@ -17,25 +17,41 @@ chrome.extension.sendRequest({}, function(response) {options = response;
 		if (document.readyState === "complete") {
 			countWords();
 			clearInterval(readyStateCheckInterval);
-			}
-		}, 10);
-	});
+		}
+	}, 10);
+	var statusbar = document.getElementById('statusBar');
+	statusbar.className = options.themepicker;
+});
 
 function countWords() {
-	var pageCount = 0;
-	var divs = document.getElementsByTagName('div'), i;
-	for (i in divs) {
-		if((" " + divs[i].className + " ").indexOf(" kix-page ") > -1) { pageCount++; }
-	}
 	var wordCount = 0;
-	var spans = document.getElementsByTagName('span'), i; 
-	for (i in spans) {
-		if((" " + spans[i].className + " ").indexOf(" kix-lineview-text-block ") > -1) {
-			var words = spans[i].innerText.replace(/W+/g, ' ').match(/S+/g);
-			wordCount += words &&
-			words.length || 0;
+	var pageCount = 0;
+
+	var message = '';
+
+	if (options.pagecounter) {
+		var divs = document.getElementsByTagName('div'), i;
+		for (i in divs) {
+			if((" " + divs[i].className + " ").indexOf(" kix-page ") > -1) {
+				pageCount++;
+			}
 		}
+		message += pageCount + ' pages';
 	}
-	document.getElementById('wordsTotal').innerText = pageCount + ' pages, ' + wordCount + ' total words';
+
+	if (options.wordcounter) {
+		var spans = document.getElementsByTagName('span'), i;
+		for (i in spans) {
+			if((" " + spans[i].className + " ").indexOf(" kix-lineview-text-block ") > -1) {
+				var words = spans[i].innerText.replace(/W+/g, ' ').match(/S+/g);
+				wordCount += words && words.length || 0;
+			}
+		}
+		if (message != '') {message += ', ';}
+		message += wordCount + ' total words';
+	}
+
+	document.getElementById('wordsTotal').innerText = message;
+
 	timeout = setTimeout('countWords()', 5000);
 }
