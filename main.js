@@ -43,12 +43,12 @@ function countWords() {
 		var spans = document.getElementsByTagName('span'), i;
 		for (i in spans) {
 			if((" " + spans[i].className + " ").indexOf(" kix-lineview-text-block ") > -1) {
-				var words = spans[i].innerText.replace(/W+/g, ' ').match(/S+/g);
+				var words = spans[i].innerText.replace(/\W+/g, ' ').match(/\S+/g);
 				wordCount += words && words.length || 0;
 			}
 		}
 		if (message != '') {message += ', ';}
-		message += wordCount + ' total words';
+		message += wordCount + ' words total';
 	}
 
 	document.getElementById('wordsTotal').innerText = message;
