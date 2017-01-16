@@ -1,5 +1,5 @@
 {
-	"name": "Word Count for Google Docs",
+	"name": "Word and Page Count for Google Docs",
 	"version": "1.0",
 	"manifest_version": 2,
 	"web_accessible_resources": ["statusbar.html"],
@@ -10,7 +10,7 @@
 	"page_action" :
 	{
 		"default_icon" : "icon.png",
-		"default_title" : "Ready to count words in Google doc"
+		"default_title" : "Ready to count words and pages in Google doc"
 	},
 	"content_scripts": [
 	{
