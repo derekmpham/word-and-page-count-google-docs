@@ -1,10 +1,10 @@
 {
 	"name": "Word and Page Count for Google Docs",
-	"version": "1.1",
+	"version": "1.2",
 	"manifest_version": 2,
 	"web_accessible_resources": ["statusbar.html"],
 
-	"description": "Status bar display for Google Docs.",
+	"description": "Status bar display of word and page count for Google Docs.",
 	"background" : { "page": "background.html" },
 		
 	"page_action" :
